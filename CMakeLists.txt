@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.30.5)
+
+set(NN digits)
+project(NeuralNetwork)
+file(GLOB_RECURSE NSRC CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/src/*.c")
+add_executable(${NN} ${NSRC})
+target_include_directories(${NN} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes)
+target_link_libraries(${NN} m)
+target_link_libraries(${NN} -fsanitize=address)
+target_compile_options(${NN} PRIVATE -Wall -Wextra -Wunused-variable)
