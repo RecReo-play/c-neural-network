@@ -3,7 +3,6 @@
 #include <sys/stat.h>
 //#define NO_LINEAR_CHECKS
 #include <neural-network.h>
-#include <hash-table.h>
 #include <errno.h>
 #include <signal.h>
 
